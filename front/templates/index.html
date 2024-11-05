@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100%, initial-scale=1.0">
+    <title>Minha Página</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+   
+
+</head>
+
+<body>
+  <script>
+    function mostrarImagemCasa() {
+        var timeEscolhido = document.getElementById('escolha').value;
+        var imagemSaoPaulo = document.getElementById('imagem-sao-paulo-casa');
+        var imagemCorinthians = document.getElementById('imagem-corinthians-casa');
+
+        // Inicialmente esconder todas as imagens
+        imagemSaoPaulo.style.display = 'none';
+        imagemCorinthians.style.display = 'none';
+
+        // Mostrar a imagem correspondente se o time for selecionado
+        if (timeEscolhido === 'São Paulo') {
+            imagemSaoPaulo.style.display = 'block';
+        } else if (timeEscolhido === 'Corinthians') {
+            imagemCorinthians.style.display = 'block';
+        }
+    }
+
+    function mostrarImagemVisitante() {
+        var timeVisitante = document.getElementById('visitante').value;
+        var imagemSaoPaulo = document.getElementById('imagem-sao-paulo-visitante');
+        var imagemCorinthians = document.getElementById('imagem-corinthians-visitante');
+
+        // Inicialmente esconder todas as imagens
+        imagemSaoPaulo.style.display = 'none';
+        imagemCorinthians.style.display = 'none';
+
+        // Mostrar a imagem correspondente se o time for selecionado
+        if (timeVisitante === 'São Paulo') {
+            imagemSaoPaulo.style.display = 'block';
+        } else if (timeVisitante === 'Corinthians') {
+            imagemCorinthians.style.display = 'block';
+        }
+    }
+</script>
+    <nav class="bg-cyan-500" style="box-shadow: 0px 1px 10px 1px rgba(168, 248, 65, 0.5);">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <!-- Mobile menu button-->
+              <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <!--
+                  Icon when menu is closed.
+      
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <!--
+                  Icon when menu is open.
+      
+                  Menu open: "block", Menu closed: "hidden"
+                  -->
+                  <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div class="flex flex-shrink-0 items-center">
+                <img class="h-8 w-auto" src="{{ url_for('static', filename='elementar.png') }}" alt="Your Company">
+              </div>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                  <a href="{{ url_for('index') }}" class="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700 hover:text-white" aria-current="page">Prever Estatisticas</a>
+                  <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
+                  <a href="{{ url_for('dashboard') }}" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Dashboard</a>
+
+
+                  
+                </div>
+                
+              </div>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <span class="absolute -inset-1.5"></span>
+                <span class="sr-only">View notifications</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                </svg>
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden" id="mobile-menu">
+          <div class="space-y-1 px-2 pb-3 pt-2">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
+            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
+            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+            
+          </div>
+        </div>
+      </nav>
+      
+      <img class="elementar" src="{{ url_for('static', filename='elementar.png') }}" alt="Your Company">
+    
+    
+      <select id="escolha" name="opcao" class="inputtimecasa" style="margin-left: 14%; margin-top: 3%;" onchange="mostrarImagemCasa()">
+        <option value="opcao0">Escolha o time da casa</option>
+        {% for team in home_teams %}
+        <option value="{{ team }}">{{ team }}</option>
+        {% endfor %}
+      </select>
+
+    <select id="novo" name="opcao" class="inputtimecasa" style="margin-left: 3%; margin-top: 3%;">
+        <option value="opcao0">Oque deseja prever?</option>
+        <option value="vencedor">Quem vai ganhar</option>
+        <option value="num_gols">Número de gols</option>
+        <option value="primeiro_gol">Quem fará o primeiro gol?</option>
+    </select>
+
+    <select id="visitante" name="opcao" class="inputtimecasa" style="margin-left: 3%; margin-top: 3%;" onchange="mostrarImagemVisitante()">
+      <option value="opcao0">Escolha o time visitante</option>
+      {% for team in away_teams %}
+      <option value="{{ team }}">{{ team }}</option>
+      {% endfor %}
+  </select>
+    
+    
+   
+
+    <div class="quadrado-vazado1" style="margin-left: 14%; margin-top: 5%; " id="quadrado">
+        <img src="{{ url_for('static', filename='corinthians.png') }}" alt="Corinthians" id="imagem-corinthians-casa" style="scale: 70%; display: none;">
+        <img src="{{ url_for('static', filename='saopaulo.png') }}" alt="São Paulo" id="imagem-sao-paulo-casa" style="scale: 140%; display: none;">
+    </div>
+
+    <div class="quadrado-vazado2" style="margin-left: 65%; margin-top: 5%;">
+      <img src="{{ url_for('static', filename='corinthians.png') }}" alt="Corinthians" id="imagem-corinthians-visitante" style="scale: 70%; display: none;">
+
+      <img src="{{ url_for('static', filename='saopaulo.png') }}" alt="São Paulo" id="imagem-sao-paulo-visitante" style="scale: 140%; display: none;">
+
+    </div>
+
+    <h1  style="display: flex;text-shadow: rgb(35, 224, 10) 1px 0 10px;justify-content: center; margin-top:10%; color: #A8F841; font-size: 100px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" >X</h1>
+    <button class="botao animate-pulse" style="margin-left: 40%; margin-top: 5%;">Prever Estatisticas</button>
+    <br>
+    <br>
+    
+
+</body>
+</html>

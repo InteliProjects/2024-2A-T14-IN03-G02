@@ -1,0 +1,6 @@
+[theme]
+base="light"  # Use "dark" para um tema escuro
+primaryColor="#233954"  # Cor principal do seu aplicativo
+backgroundColor="#222D3A"  # Cor de fundo do aplicativo
+secondaryBackgroundColor="#233954"  # Cor de fundo secundária (geralmente para widgets)
+textColor="#FFFFFF"  # Cor do texto

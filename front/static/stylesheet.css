@@ -1,0 +1,113 @@
+
+body {
+    background-color: #222D3A; /* Substitua #f0f0f0 pela cor desejada */
+}
+.elementar {
+width: 30%;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-left: 34%;
+margin-top: 2%;
+
+}
+
+.inputtimecasa {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600;
+    width: 22%;
+    height: 40%;
+    font-size: 17px;
+    text-align: center;
+    color: white;
+    background-color: #222D3A;
+    border: 2px solid #A8F841;
+    border-radius: 10px;
+    padding: 2px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Efeito ao passar o mouse */
+.inputtimecasa:hover {
+    background-color: #2B3749; /* Leve escurecimento no hover */
+    border-color: #D0F841;     /* Cor da borda mais vibrante */
+}
+
+/* Efeito ao focar (quando o input está selecionado) */
+.inputtimecasa:focus {
+    border-color: #F8FF41;     /* Cor da borda mais vibrante no foco */
+    box-shadow: 0 0 8px rgba(168, 248, 65, 0.7); /* Sombra verde ao focar */
+}
+
+/* Texto placeholder (dica dentro do input) */
+.inputtimecasa::placeholder {
+    color: #A0AAB4; /* Cor do texto placeholder */
+    opacity: 0.8;
+}
+
+.quadrado-vazado1 {
+    width: 22%;
+    height: 45%;
+    border: 2px solid #A8F841; /* Define a borda verde */
+    background-color: transparent; /* O interior é transparente */
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    box-shadow: 0 0 8px rgba(168, 248, 65, 0.7);
+}
+.quadrado-vazado1 img {
+    width: 100%;
+    height: auto;
+    display: none; /* A imagem será escondida até ser necessário exibi-la */
+}
+
+.quadrado-vazado2 {
+    width: 22%;
+    height: 45%;
+    border: 2px solid #A8F841; /* Define a borda verde */
+    background-color: transparent; /* O interior é transparente */
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    box-shadow: 0 0 8px rgba(168, 248, 65, 0.7);
+}
+.quadrado-vazado2 img {
+    width: 100%;
+    height: auto;
+    display: none; /* A imagem será escondida até ser necessário exibi-la */
+}
+.botao {
+    color: white;
+    background-color: #2B3749;
+    border: 2px solid #A8F841;
+    border-radius: 10px;
+    width: 20%;
+    font-size: 20px;
+    font-family: Source Sans Pro, sans-serif;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+}
+
+.botao:hover {
+    background-color: #2d4260;
+    border-color: #c8f622;
+    box-shadow: 0 0 8px rgba(168, 248, 65, 0.7);
+    transform: scale(1.1); /* Aumenta o tamanho em 10% */
+    cursor: pointer;
+}
+
+.st-emotion-cache-1dp5vir {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    height: 0.125rem;
+    background-image: linear-gradient(90deg, rgb(245 245 245), rgb(255, 255, 255));
+    z-index: 999990;
+}

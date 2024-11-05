@@ -1,0 +1,6 @@
+primeiro passo: cd front
+segundo passo: streamlit run dash.py
+terceiro passo: abra um novo terminal
+quarto passo: cd front
+quinto passo: python app.py
+sexto passo: acesse o link gerado
